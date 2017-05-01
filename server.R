@@ -5,19 +5,50 @@
 # http://shiny.rstudio.com
 #
 
-library(shiny)
+library(shinydashboard)
 
-shinyServer(function(input, output) {
-
-  output$distPlot <- renderPlot({
-
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2]
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-
+server <- function(input, output) {
+  output$dynamic1 <- renderInfoBox({
+    infoBox(
+      "Progress", paste0(25 + input$count, "%"), icon = icon("list"),
+      color = "purple"
+    )
   })
+  output$dynamic2 <- renderInfoBox({
+    infoBox(
+      "Approval", "80%", icon = icon("thumbs-up", lib = "glyphicon"),
+      color = "yellow"
+    )
+  })
+  
+  # Same as above, but with fill=TRUE
+  output$dynamic3 <- renderInfoBox({
+    infoBox(
+      "Progress", paste0(25 + input$count, "%"), icon = icon("list"),
+      color = "purple", fill = TRUE
+    )
+  })
+  output$dynamic4 <- renderInfoBox({
+    infoBox(
+      "Approval", "80%", icon = icon("thumbs-up", lib = "glyphicon"),
+      color = "yellow", fill = TRUE
+    )
+  })
+  
+  output$valueBox1 <- renderValueBox({
+    valueBox(
+      paste0(25 + input$count, "%"), "Progress", icon = icon("list"),
+      color = "purple"
+    )
+  })
+  
+  output$valueBox2 <- renderValueBox({
+    valueBox(
+      "80%", "Approval", icon = icon("thumbs-up", lib = "glyphicon"),
+      color = "yellow"
+    )
+  })
+  
+}
 
-})
+
