@@ -1,6 +1,6 @@
 # shinydashboard_infoboxes
 
-A complete example for using shinydashboard infoboxes and valueboxes in a Shiny project.
+An extended example on how to use infoboxes and valueboxes with shinydashboard.
 
 ## Overview
 
