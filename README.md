@@ -15,6 +15,5 @@ install.packages("shinydashboard")
 
 To run this example:
 ```
-
+shiny::runGitHub("andrewRosenblum/shinydashboard_infoboxes/")
 ```
-
