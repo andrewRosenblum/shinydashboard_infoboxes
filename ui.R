@@ -8,7 +8,7 @@
 library(shinydashboard)
 
 dashboardPage(
-  dashboardHeader(title = "Page Title boxes"),
+  dashboardHeader(title = "Page Title"),
   dashboardSidebar(),  #Sidebar content would be setup here
   dashboardBody(
     fluidRow(

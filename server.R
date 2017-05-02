@@ -28,6 +28,7 @@ server <- function(input, output) {
       color = "purple", fill = TRUE
     )
   })
+  
   output$dynamic4 <- renderInfoBox({
     infoBox(
       "Approval", "80%", icon = icon("thumbs-up", lib = "glyphicon"),
